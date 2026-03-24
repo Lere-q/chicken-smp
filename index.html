@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChickenSMP | Premium Minecraft Server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Chicken<span>SMP</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#staff">Staff Team</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#calendar">Events</a></li>
+                <li><a href="#info">Server Info</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">☀️</button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <span class="early-access-badge">🚀 Early Access</span>
+            <h1>Welcome to ChickenSMP</h1>
+            <p>A mature, community-driven survival experience.</p>
+            <div class="hero-buttons">
+                <a href="#info" class="btn btn-primary">Join the Server</a>
+                <a href="#discord" class="btn btn-secondary">Join Discord</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container reveal">
+            <div class="early-access-banner">
+                <span class="badge">🚀 Early Access</span>
+                <p>We're currently in development! The server is live but still in testing phase. Some features may change and events will begin once we fully launch.</p>
+            </div>
+            <h2 class="section-title">About Us</h2>
+            <p class="section-text">
+                ChickenSMP is a premium Minecraft survival server dedicated to providing a clean, lag-free, and engaging environment. We focus on enhancing the vanilla experience with quality-of-life improvements, professional moderation, and a mature community that values collaboration and creativity.
+            </p>
+        </div>
+    </section>
+
+    <section id="features" class="section bg-alt">
+        <div class="container reveal">
+            <h2 class="section-title">Features</h2>
+            <div class="grid">
+                <div class="card hover-glow">
+                    <h3>Enhanced Survival</h3>
+                    <p>Experience vanilla survival at its core, carefully balanced with subtle improvements to keep gameplay fair and exciting.</p>
+                </div>
+                <div class="card hover-glow" style="transition-delay: 0.1s;">
+                    <h3>Strong Community</h3>
+                    <p>Join a welcoming, mature player base. Build towns, establish trade routes, and collaborate on massive projects.</p>
+                </div>
+                <div class="card hover-glow" style="transition-delay: 0.2s;">
+                    <h3>Weekly Events</h3>
+                    <p>Participate in professionally organized server events, from build competitions to custom PvE challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="discord" class="section">
+        <div class="container text-center reveal">
+            <h2 class="section-title">Join Our Discord</h2>
+            <p class="section-text">Connect with the community, get the latest updates, and chat with players even when you're offline.</p>
+            <a href="https://discord.gg/7nu7mjm6Xs" target="_blank" rel="noopener noreferrer" class="btn btn-primary discord-btn">
+                Launch Discord
+            </a>
+        </div>
+    </section>
+
+    <section id="staff" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Staff Team</h2>
+            <p class="section-text" style="margin-bottom: 40px;">The dedicated team keeping ChickenCity running smoothly.</p>
+            
+            <div class="grid staff-grid">
+                <div class="card staff-card hover-glow">
+                    <div class="staff-header">
+                        <span class="staff-role owner-role">Owner</span>
+                        <h3>@LEREletsplay</h3>
+                    </div>
+                    <ul class="staff-details">
+                        <li><strong>Role:</strong> Technical Lead</li>
+                        <li><strong>Handles:</strong> Plugins, server configuration, bug fixes, backend, full panel access.</li>
+                    </ul>
+                </div>
+
+                <div class="card staff-card hover-glow" style="transition-delay: 0.1s;">
+                    <div class="staff-header">
+                        <span class="staff-role coowner-role">Co-Owner</span>
+                        <h3>@─╤╦︻ ʝⰙƘⰙȴⰙ ︻╦╤─</h3>
+                    </div>
+                    <ul class="staff-details">
+                        <li><strong>Role:</strong> Project Lead</li>
+                        <li><strong>Handles:</strong> Server vision, community management, support, Discord, organization.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="section bg-alt">
+        <div class="container reveal">
+            <span class="section-badge">🚀 Early Access</span>
+            <h2 class="section-title">Server Info</h2>
+            <div class="info-card hover-glow">
+                <div class="ip-container">
+                    <span class="ip-label">Server IP:</span>
+                    <span id="ip-text" class="ip-address">ChickenCity.serverr.de</span>
+                    <button id="copy-btn" class="btn btn-sm">Copy IP</button>
+                </div>
+                <div class="status-container">
+                    <div class="status-indicator" id="status-dot"></div>
+                    <span id="server-status">Pinging server...</span>
+                    <button id="refresh-status" class="refresh-btn" aria-label="Refresh Status">↻</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="section bg-alt">
+        <div class="container reveal">
+            <h2 class="section-title">Latest News</h2>
+            <div id="news-grid" class="grid">
+                <p class="section-text">Loading posts...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Event Calendar</h2>
+            <p class="section-text" style="margin-bottom: 40px;">Upcoming events and competitions.</p>
+            <div id="events-grid" class="grid">
+                <p class="section-text">Loading events...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ChickenSMP. All rights reserved.</p>
+            <p class="disclaimer">Not affiliated with or endorsed by Mojang AB or Microsoft.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

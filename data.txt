@@ -1,0 +1,47 @@
+# ============================================
+# ChickenSMP Data File
+# ============================================
+# 
+# Edit this file to add blog posts and events
+# Separate each entry with "-----" (five dashes)
+# 
+# ============================================
+
+[BLOG]
+
+title=New Website Launched!
+date=2026-03-24
+excerpt=Check out our brand new website with server status, events calendar, and more!
+content=We're excited to unveil our brand new website! Here's what's new: \n\n📊 Live Server Status - See player counts in real-time with auto-refresh\n\n📅 Event Calendar - Never miss a build competition or tournament\n\n📰 Blog Section - Stay updated with the latest news\n\n🎨 Dark/Light Mode - Toggle between themes for comfortable viewing\n\n💬 Discord Integration - Join our community on Discord\n\nVisit the site and let us know what you think!
+
+-----
+title=Welcome to ChickenSMP!
+date=2026-03-01
+excerpt=We're excited to announce the launch of our new survival server...
+content=We're excited to announce the launch of our new survival server! Join us for a mature, community-driven experience with quality-of-life improvements. See you in-game!
+
+-----
+title=Server Rules Update
+date=2026-03-15
+excerpt=We've updated our server rules to ensure a better experience...
+content=We've updated our server rules to ensure a better experience for everyone. Please review the new guidelines in our Discord. Key changes include stricter griefing policies and new trading rules.
+
+
+[EVENTS]
+
+name=Build Competition
+date=2026-03-28
+time=18:00
+description=Theme: Medieval Castle. Prizes for top 3 builds!
+
+-----
+name=PvP Tournament
+date=2026-04-05
+time=20:00
+description=1v1 bracket tournament. Sign up in Discord!
+
+-----
+name=Weekly Parkour Challenge
+date=2026-04-12
+time=17:00
+description=Complete the parkour course for rewards!

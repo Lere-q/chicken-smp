@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading... | ChickenSMP News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .post-page {
+            min-height: 100vh;
+            padding: 120px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .post-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .post-date {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.1);
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .post-content p { margin-bottom: 20px; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .back-btn:hover { color: var(--accent-color); }
+        .error-message { text-align: center; padding: 60px 20px; }
+        .error-message h2 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Chicken<span>SMP</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#staff">Staff</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="index.html#calendar">Events</a></li>
+                <li><a href="index.html#info">Server</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">☀️</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="post-page">
+        <a href="index.html#news" class="back-btn">← Back to News</a>
+        
+        <article id="post-container">
+            <p class="section-text">Loading post...</p>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ChickenSMP. All rights reserved.</p>
+            <p class="disclaimer">Not affiliated with or endorsed by Mojang AB or Microsoft.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Theme toggle (same as main site)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'light') {
+            body.classList.add('light-theme');
+            themeToggleBtn.textContent = '🌙';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            if (body.classList.contains('light-theme')) {
+                localStorage.setItem('theme', 'light');
+                themeToggleBtn.textContent = '🌙';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggleBtn.textContent = '☀️';
+            }
+        });
+
+        // Get post ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = parseInt(urlParams.get('id'));
+
+        // Find and display post
+        const posts = siteData.posts || [];
+        const post = posts.find(p => p.id === postId);
+        const container = document.getElementById('post-container');
+
+        if (post) {
+            document.title = post.title + ' | ChickenSMP News';
+            
+            const formattedDate = new Date(post.date).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            container.innerHTML = `
+                <header class="post-header">
+                    <span class="post-date">${formattedDate}</span>
+                    <h1 class="post-title">${post.title}</h1>
+                </header>
+                <div class="post-content">
+                    ${post.content}
+                </div>
+            `;
+        } else {
+            container.innerHTML = `
+                <div class="error-message">
+                    <h2>Post Not Found</h2>
+                    <p>The post you're looking for doesn't exist.</p>
+                    <a href="index.html#news" class="btn btn-primary" style="margin-top: 20px;">Back to News</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
